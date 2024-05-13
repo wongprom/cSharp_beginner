@@ -12,3 +12,4 @@
 /Users/wongprom/CodingAndStuff/MyProjects/study_2024/vs_projects/myapp/obj/Debug/net8.0/myapp.pdb
 /Users/wongprom/CodingAndStuff/MyProjects/study_2024/vs_projects/myapp/obj/Debug/net8.0/myapp.genruntimeconfig.cache
 /Users/wongprom/CodingAndStuff/MyProjects/study_2024/vs_projects/myapp/obj/Debug/net8.0/ref/myapp.dll
+/Users/wongprom/CodingAndStuff/MyProjects/study_2024/vs_projects/myapp/obj/Debug/net8.0/myapp.sourcelink.json

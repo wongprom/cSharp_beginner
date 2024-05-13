@@ -65,9 +65,8 @@ namespace Myapp
       // double myNum2 = OverloadPlusMethod(1.2, 2.3);
 
       //info Coding test
-      string inputValue = "The quick brown fox jumps over the lazy dog";
-      // CodingTest.isPangram(inputValue);
-      Console.WriteLine($"CodingTest.isPangram: {CodingTest.isPangram(inputValue)}");
+      // string inputValue = "The quick brown fox jumps over the lazy dog";
+      // Console.WriteLine($"CodingTest.isPangram: {CodingTest.isPangram(inputValue)}");
 
       //info, CLASSES & OBJECTS
       Person alien = new Person() 
@@ -142,42 +141,96 @@ namespace Myapp
       };
 
       //info Enum(erations)
-      List<Todo> myTodos = new List<Todo>() 
-      {
-        new Todo {Description ="Walk My Dog", EstimatedHours = 1, Status = StatusEnum.Completed},
-        new Todo {Description ="Dishes", EstimatedHours = 1, Status = StatusEnum.OnHold},
-        new Todo {Description ="Walk", EstimatedHours = 2, Status = StatusEnum.NotStarted},
-        new Todo {Description ="Homework", EstimatedHours = 2, Status = StatusEnum.Deleted},
-        new Todo {Description ="Shopping", EstimatedHours = 2, Status = StatusEnum.InProgress},
-      };
+      // List<Todo> myTodos = new List<Todo>() 
+      // {
+      //   new Todo {Description ="Walk My Dog", EstimatedHours = 1, Status = StatusEnum.Completed},
+      //   new Todo {Description ="Dishes", EstimatedHours = 1, Status = StatusEnum.OnHold},
+      //   new Todo {Description ="Walk", EstimatedHours = 2, Status = StatusEnum.NotStarted},
+      //   new Todo {Description ="Homework", EstimatedHours = 2, Status = StatusEnum.Deleted},
+      //   new Todo {Description ="Shopping", EstimatedHours = 2, Status = StatusEnum.InProgress},
+      // };
 
-      //info Switch Statement
-      foreach (var todo in myTodos)
+      // //info Switch Statement
+      // foreach (var todo in myTodos)
+      // {
+      //   switch (todo.Status)
+      //   {
+      //     case StatusEnum.NotStarted:
+      //       Console.ForegroundColor = ConsoleColor.Red;
+      //       break;
+      //     case StatusEnum.OnHold:
+      //       Console.ForegroundColor = ConsoleColor.Yellow;
+      //       break;
+      //     case StatusEnum.InProgress:
+      //       Console.ForegroundColor = ConsoleColor.Blue;
+      //       break;
+      //     case StatusEnum.Completed:
+      //       Console.ForegroundColor = ConsoleColor.Green;
+      //       break;
+      //     case StatusEnum.Deleted:
+      //       Console.ForegroundColor = ConsoleColor.White;
+      //       break;
+      //     default:
+      //       break;
+      //   }
+      //   Console.WriteLine(todo.Description);
+      // }
+      //info Better Todo
+
+      // Declare MyTodoList
+      List<string> myTodoList = new List<string>();
+      bool isOn = true;
+      while (isOn)
       {
-        switch (todo.Status)
-        {
-          case StatusEnum.NotStarted:
-            Console.ForegroundColor = ConsoleColor.Red;
-            break;
-          case StatusEnum.OnHold:
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            break;
-          case StatusEnum.InProgress:
-            Console.ForegroundColor = ConsoleColor.Blue;
-            break;
-          case StatusEnum.Completed:
-            Console.ForegroundColor = ConsoleColor.Green;
-            break;
-          case StatusEnum.Deleted:
-            Console.ForegroundColor = ConsoleColor.White;
-            break;
-          default:
-            break;
-        }
-        Console.WriteLine(todo.Description);
+
+      Console.WriteLine("Here are your options for TodoList:");
+      Console.WriteLine("0 - exit");
+      Console.WriteLine("1 - View todos");
+      Console.WriteLine("2 - Add todo");
+      Console.WriteLine("3 - Delete todo");
+
+      string userInput = Console.ReadLine();
+
+      //info make string to int
+      bool optionParseResult = int.TryParse(userInput, out int optionId);
+      Console.WriteLine(userInput);
+      if(!optionParseResult)
+      {
+        Console.WriteLine("This option is not valid, try again.");
+        continue;
       }
+      //info EXIT Todo App
+        if(optionId == 0)
+      {
+        isOn = false;
+        break;
+      }
+      //info VIEW all Todos
+        if(optionId == 1)
+      {
+        Console.WriteLine("Your Todos");
+        foreach(string todoItem in myTodoList)
+        {
+          Console.WriteLine(todoItem);
+        }
+        
+      }
+      //info Add TodoItem
+      else if(optionId == 2)
+      {
+        Console.WriteLine("Enter new Todo item to list.");
+        string newTodoListItem = Console.ReadLine();
+        //Todo: validate input
+        myTodoList.Add(newTodoListItem);
 
-    
+      }
+      else
+      {
+
+      }
+      }
+      Console.WriteLine("Thanks for Using my Todo App");
+
     } // END static void Main
 
     // ? BLOCK SCOPE in C#
