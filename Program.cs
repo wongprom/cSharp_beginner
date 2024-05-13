@@ -33,28 +33,28 @@ namespace Myapp
     // }
    
     
-    class Todo
-    {
-      public string Description { get; set; } = String.Empty;
-      public int EstimatedHours { get; set; }
-      public  StatusEnum Status { get; set; }
-    }
+    // class Todo
+    // {
+    //   public string Description { get; set; } = String.Empty;
+    //   public int EstimatedHours { get; set; }
+    //   public  StatusEnum Status { get; set; }
+    // }
 
    
-    enum StatusEnum
-    {
-      NotStarted,
-      InProgress,
-      OnHold,
-      Completed,
-      Deleted
-    }
+    // enum StatusEnum
+    // {
+    //   NotStarted,
+    //   InProgress,
+    //   OnHold,
+    //   Completed,
+    //   Deleted
+    // }
     static void Main(string[] args)
     {
     
       //info Imported METHODS & FUNCTIONS
       // BeginnerClass.Hello();
-        //  Easy.FizzBuzz(2,4,7);
+      //  Easy.FizzBuzz(2,4,7);
       // BeginnerClass.UnderstandArrays();
       // BeginnerClass.IfDecisionStatement();
       // BeginnerClass.IterationStatement();

@@ -80,6 +80,14 @@ public class BeginnerClass
 }
 
 //info Enum(erations)
+public enum StatusEnum
+    {
+      NotStarted,
+      InProgress,
+      OnHold,
+      Completed,
+      Deleted
+    }
 public enum HairLengthEnum
 {
     Long,
@@ -147,3 +155,11 @@ class Car
     public string Model { get; set;} = string.Empty;
     public string VIN { get; set; } = string.Empty;
    }
+
+public class Todo
+{
+    public string Description { get; set; } = String.Empty;
+    public int EstimatedHours { get; set; }
+    public  StatusEnum Status { get; set; }
+}
+
