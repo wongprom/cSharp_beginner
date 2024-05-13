@@ -208,10 +208,16 @@ namespace Myapp
       //info VIEW all Todos
         if(optionId == 1)
       {
-        Console.WriteLine("Your Todos");
-        foreach(string todoItem in myTodoList)
+        if(!myTodoList.Any())
         {
-          Console.WriteLine(todoItem);
+          Console.WriteLine("You have no Todos, you are FREEEE");
+        }
+        else{
+          Console.WriteLine("Your Todos:");
+          foreach(string todoItem in myTodoList)
+          {
+            Console.WriteLine(todoItem);
+          }
         }
         
       }
