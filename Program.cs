@@ -200,6 +200,12 @@ namespace Myapp
         continue;
       }
       //info EXIT Todo App
+
+
+
+
+
+      
         if(optionId == 0)
       {
         isOn = false;
@@ -214,12 +220,13 @@ namespace Myapp
         }
         else{
           Console.WriteLine("Your Todos:");
+          int i = 0;
           foreach(string todoItem in myTodoList)
           {
-            Console.WriteLine(todoItem);
+            Console.WriteLine($"{i} - {todoItem}");
+            i++;
           }
         }
-        
       }
       //info Add TodoItem
       else if(optionId == 2)
@@ -230,9 +237,30 @@ namespace Myapp
         myTodoList.Add(newTodoListItem);
 
       }
+      else if(optionId == 3)
+      {
+        Console.WriteLine("Enter the index of TodoItem to remove");
+        string userInputForRemoveItem = Console.ReadLine();
+        bool removeIndexParseResult = int.TryParse(userInputForRemoveItem, out int removeIndex);
+        if(!removeIndexParseResult)
+        {
+          Console.WriteLine("Input was not integer");
+          continue;
+        }
+        // must be non-negative and less than the size of the collection.
+        if(removeIndex < 0 || removeIndex >= myTodoList.Count)
+        {
+          Console.WriteLine("Input must be non-negative and less than the size of the collection.");
+          continue;
+        }
+
+        myTodoList.RemoveAt(removeIndex);
+
+      }
       else
       {
-
+         Console.WriteLine("Not valid input");
+          continue;
       }
       }
       Console.WriteLine("Thanks for Using my Todo App");
